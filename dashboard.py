@@ -100,7 +100,7 @@ def get_central_bank_rate():
         return None
 
 @st.cache_data(ttl=3600)
-def get_policy_indicators(file_path='data/politiques.xlsx'):
+def get_policy_indicators(file_path='politiques.xlsx'):
     """Charge les indicateurs de politiques publiques depuis un fichier Excel."""
     try:
         policies = pd.read_excel(file_path)
