@@ -491,7 +491,7 @@ if data_morocco is not None:
 
         # 🔍 Lecture du fichier Excel
         try:
-            policies = pd.read_excel("politiques_correct.xlsx")
+            policies = pd.read_excel("politiques.xlsx")
             policies.rename(columns={
                 policies.columns[0]: 'Années',
                 'isFound': 'politique_appliquee',
@@ -501,7 +501,7 @@ if data_morocco is not None:
             }, inplace=True)
             policies['date'] = pd.to_datetime(policies['Années'].astype(str), format='%Y')
         except Exception as e:
-            st.error(f"Erreur lors du chargement de politiques_correct.xlsx : {e}")
+            st.error(f"Erreur lors du chargement de politiques.xlsx : {e}")
             st.stop()
 
         # 🎯 Sélection du type de politique
